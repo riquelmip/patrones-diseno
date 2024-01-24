@@ -1,9 +1,10 @@
-package patrones.creacionales.factoryMethod.clases;
+package patrones.creacionales.factorySimple.clases;
 
-import patrones.creacionales.factoryMethod.interfaces.DocumentoFM;
+
+import patrones.creacionales.factorySimple.interfaces.Documento;
 
 // Implementación de la interfaz Document para una hoja de cálculo.
-public class HojaCalculo implements DocumentoFM {
+public class HojaCalculo implements Documento {
     @Override
     public void abrir() {
         System.out.println("Hoja de cálculo abierta");
