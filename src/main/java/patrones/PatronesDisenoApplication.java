@@ -2,6 +2,11 @@ package patrones;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import patrones.creacionales.abstractFactory.clases.FabricaMueblesClasicos;
+import patrones.creacionales.abstractFactory.clases.FabricaMueblesModernos;
+import patrones.creacionales.abstractFactory.interfaces.FabricaMuebles;
+import patrones.creacionales.abstractFactory.interfaces.Mesa;
+import patrones.creacionales.abstractFactory.interfaces.Silla;
 import patrones.creacionales.factoryMethod.clases.CreadorDocumentoTexto;
 import patrones.creacionales.factoryMethod.clases.CreadorHojaCalculo;
 import patrones.creacionales.factoryMethod.interfaces.CreadorDocumentos;
@@ -19,6 +24,7 @@ public class PatronesDisenoApplication {
 		SpringApplication.run(PatronesDisenoApplication.class, args);
 		factorySimple();
 		factoryMethod();
+		abstractFactory();
 	}
 
 	private static void factorySimple() {
@@ -47,4 +53,26 @@ public class PatronesDisenoApplication {
 		hojaCalculo.cerrar();
 	}
 
+	private static void abstractFactory() {
+		System.out.println("---- ABSTRACT FACTORY ----");
+		// Utilizando la fábrica abstracta de muebles modernos
+		FabricaMuebles fabricaModerna = new FabricaMueblesModernos();
+		Silla sillaModerna = fabricaModerna.crearSilla();
+		Mesa mesaModerna = fabricaModerna.crearMesa();
+
+		System.out.println("Construyendo muebles modernos:");
+		sillaModerna.construir();
+		mesaModerna.construir();
+
+		System.out.println();
+
+		// Utilizando la fábrica abstracta de muebles clásicos
+		FabricaMuebles fabricaClasica = new FabricaMueblesClasicos();
+		Silla sillaClasica = fabricaClasica.crearSilla();
+		Mesa mesaClasica = fabricaClasica.crearMesa();
+
+		System.out.println("Construyendo muebles clásicos:");
+		sillaClasica.construir();
+		mesaClasica.construir();
+	}
 }

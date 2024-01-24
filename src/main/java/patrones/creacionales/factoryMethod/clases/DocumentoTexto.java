@@ -2,7 +2,7 @@ package patrones.creacionales.factoryMethod.clases;
 
 import patrones.creacionales.factoryMethod.interfaces.DocumentoFM;
 
-// Implementación de la interfaz Document para un documento de texto.
+// Implementación de la interfaz Documento para un documento de texto.
 public class DocumentoTexto implements DocumentoFM {
     @Override
     public void abrir() {

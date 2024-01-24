@@ -2,7 +2,7 @@ package patrones.creacionales.factoryMethod.clases;
 
 import patrones.creacionales.factoryMethod.interfaces.DocumentoFM;
 
-// Implementación de la interfaz Document para una hoja de cálculo.
+// Implementación de la interfaz Documento para una hoja de cálculo.
 public class HojaCalculo implements DocumentoFM {
     @Override
     public void abrir() {
