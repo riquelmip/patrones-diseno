@@ -17,6 +17,7 @@ import patrones.creacionales.factorySimple.clases.DocumentoFactory;
 import patrones.creacionales.factorySimple.interfaces.Documento;
 import patrones.creacionales.prototype.clases.Persona;
 import patrones.creacionales.prototype.interfaces.Prototype;
+import patrones.creacionales.singleton.ConfiguracionGlobal;
 
 import java.sql.SQLOutput;
 import java.util.HashMap;
@@ -32,6 +33,7 @@ public class PatronesDisenoApplication {
 		abstractFactory();
 		builder();
 		prototype();
+		singleton();
 	}
 
 	private static void factorySimple() {
@@ -113,5 +115,25 @@ public class PatronesDisenoApplication {
 
 		// Mostrar detalles del objeto clonado
 		((Persona) personaClonada).mostrarDetalles();
+	}
+
+	private static void singleton(){
+		System.out.println();
+		System.out.println("---- SINGLETON ----");
+
+		// Obtener la instancia única de ConfiguracionGlobal
+		ConfiguracionGlobal configuracion = ConfiguracionGlobal.obtenerInstancia();
+
+		// Acceder y modificar la configuración
+		System.out.println("Idioma actual: " + configuracion.getIdioma());
+		System.out.println("Máximo de conexiones: " + configuracion.getMaximoConexiones());
+
+		// Modificar la configuración
+		configuracion.setIdioma("en");
+		configuracion.setMaximoConexiones(20);
+
+		// Acceder nuevamente a la configuración
+		System.out.println("Idioma actualizado: " + configuracion.getIdioma());
+		System.out.println("Nuevo máximo de conexiones: " + configuracion.getMaximoConexiones());
 	}
 }

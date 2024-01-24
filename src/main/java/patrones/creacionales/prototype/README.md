@@ -14,7 +14,7 @@ public interface Prototype {
 }
 ```
 
-**Creamos una clase Persona que implementé la interfaz:**
+**Creamos una clase Persona que implemente la interfaz:**
 
 ```java
 // Clase concreta que implementa el Prototype

@@ -5,6 +5,7 @@ Este proyecto tiene como objetivo explicar los diferentes patrones de diseño, l
 
 ## Patrones Creacionales (Creational Patterns):
 
+- **Factory Simple**
 - **Factory Method**
 - **Abstract Factory**
 - **Builder**
