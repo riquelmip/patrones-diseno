@@ -35,6 +35,6 @@ Este proyecto tiene como objetivo explicar los diferentes patrones de diseño, l
 - **Visitor**
 - **Interpreter**
 
-### Usabilidad
+## Usabilidad
 
 Este proyecto está organizado en carpetas, cada una dedicada a un patrón de diseño específico. Dentro de cada carpeta, encontrarás un archivo de explicación detallada.
