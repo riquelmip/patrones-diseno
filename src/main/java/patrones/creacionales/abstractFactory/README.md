@@ -1,4 +1,4 @@
-# 1 - Abstract Factory
+# 3 - Abstract Factory
 
 ## Problema
 Imagina que estás diseñando un sistema para fabricar muebles, y necesitas crear diferentes tipos de muebles, como sillas y mesas, en distintos estilos, como moderno y clásico. El problema radica en cómo organizar la creación de estos muebles de manera que los productos creados sean coherentes en términos de estilo.

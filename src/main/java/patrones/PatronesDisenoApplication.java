@@ -7,6 +7,7 @@ import patrones.creacionales.abstractFactory.clases.FabricaMueblesModernos;
 import patrones.creacionales.abstractFactory.interfaces.FabricaMuebles;
 import patrones.creacionales.abstractFactory.interfaces.Mesa;
 import patrones.creacionales.abstractFactory.interfaces.Silla;
+import patrones.creacionales.builder.clases.Enemigo;
 import patrones.creacionales.factoryMethod.clases.CreadorDocumentoTexto;
 import patrones.creacionales.factoryMethod.clases.CreadorHojaCalculo;
 import patrones.creacionales.factoryMethod.interfaces.CreadorDocumentos;
@@ -25,6 +26,7 @@ public class PatronesDisenoApplication {
 		factorySimple();
 		factoryMethod();
 		abstractFactory();
+		builder();
 	}
 
 	private static void factorySimple() {
@@ -39,6 +41,7 @@ public class PatronesDisenoApplication {
 	}
 
 	private static void factoryMethod() {
+		System.out.println();
 		System.out.println("---- FACTORY METHOD ----");
 		// Utilizando un creador de documentos de texto
 		CreadorDocumentos creadorTexto = new CreadorDocumentoTexto();
@@ -54,6 +57,7 @@ public class PatronesDisenoApplication {
 	}
 
 	private static void abstractFactory() {
+		System.out.println();
 		System.out.println("---- ABSTRACT FACTORY ----");
 		// Utilizando la fábrica abstracta de muebles modernos
 		FabricaMuebles fabricaModerna = new FabricaMueblesModernos();
@@ -74,5 +78,18 @@ public class PatronesDisenoApplication {
 		System.out.println("Construyendo muebles clásicos:");
 		sillaClasica.construir();
 		mesaClasica.construir();
+	}
+
+	private static void builder(){
+		System.out.println();
+		System.out.println("---- BUILDER ----");
+		Enemigo enemigo = Enemigo.builder()
+				.nombre("pepe")
+				.tipo("malo")
+				.salud(100)
+				.daño(100)
+				.resistencia(100)
+				.build();
+		System.out.println(enemigo.toString());
 	}
 }
