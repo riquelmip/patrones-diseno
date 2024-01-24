@@ -15,8 +15,12 @@ import patrones.creacionales.factoryMethod.interfaces.CreadorDocumentos;
 import patrones.creacionales.factoryMethod.interfaces.DocumentoFM;
 import patrones.creacionales.factorySimple.clases.DocumentoFactory;
 import patrones.creacionales.factorySimple.interfaces.Documento;
+import patrones.creacionales.prototype.clases.Persona;
+import patrones.creacionales.prototype.interfaces.Prototype;
 
 import java.sql.SQLOutput;
+import java.util.HashMap;
+import java.util.Map;
 
 @SpringBootApplication
 public class PatronesDisenoApplication {
@@ -27,6 +31,7 @@ public class PatronesDisenoApplication {
 		factoryMethod();
 		abstractFactory();
 		builder();
+		prototype();
 	}
 
 	private static void factorySimple() {
@@ -91,5 +96,22 @@ public class PatronesDisenoApplication {
 				.resistencia(100)
 				.build();
 		System.out.println(enemigo.toString());
+	}
+
+	private static void prototype(){
+		System.out.println();
+		System.out.println("---- PROTOTYPE ----");
+
+		// Crear un mapa de prototipos
+		Map<String, Prototype> mapaPrototipos = new HashMap<>();
+
+		// Inicializar prototipos y agregar al mapa
+		mapaPrototipos.put("persona", new Persona("Juan", 30));
+
+		// Obtener un prototipo y realizar clonación
+		Prototype personaClonada = mapaPrototipos.get("persona").clonar();
+
+		// Mostrar detalles del objeto clonado
+		((Persona) personaClonada).mostrarDetalles();
 	}
 }
