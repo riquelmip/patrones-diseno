@@ -18,6 +18,7 @@ import patrones.creacionales.factorySimple.interfaces.Documento;
 import patrones.creacionales.prototype.clases.Persona;
 import patrones.creacionales.prototype.interfaces.Prototype;
 import patrones.creacionales.singleton.ConfiguracionGlobal;
+import patrones.estructurales.adapter.clases.ZombieAdapter;
 
 import java.sql.SQLOutput;
 import java.util.HashMap;
@@ -28,12 +29,18 @@ public class PatronesDisenoApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(PatronesDisenoApplication.class, args);
+		System.out.println();
+		System.out.println("---- CREACIONALES ----");
 		factorySimple();
 		factoryMethod();
 		abstractFactory();
 		builder();
 		prototype();
 		singleton();
+
+		System.out.println();
+		System.out.println("---- ESTRUCTURALES ----");
+		adapter();
 	}
 
 	private static void factorySimple() {
@@ -135,5 +142,14 @@ public class PatronesDisenoApplication {
 		// Acceder nuevamente a la configuración
 		System.out.println("Idioma actualizado: " + configuracion.getIdioma());
 		System.out.println("Nuevo máximo de conexiones: " + configuracion.getMaximoConexiones());
+	}
+
+	private static void adapter(){
+		System.out.println();
+		System.out.println("---- ADAPTER ----");
+
+		ZombieAdapter zombie = new ZombieAdapter();
+		zombie.ataque();
+		zombie.dano();
 	}
 }
