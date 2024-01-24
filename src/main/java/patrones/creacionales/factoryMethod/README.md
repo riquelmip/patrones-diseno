@@ -56,7 +56,7 @@ public class HojaCalculo implements DocumentoFM {
 }
 ```
 
-**Creamos dos interfaces:**
+**Creamos las clases que servirán como creadoras de documentos:**
 
 ```java
 // Implementación de la interfaz Creator para crear documentos de texto.
