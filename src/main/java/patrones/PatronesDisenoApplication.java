@@ -19,6 +19,8 @@ import patrones.creacionales.prototype.clases.Persona;
 import patrones.creacionales.prototype.interfaces.Prototype;
 import patrones.creacionales.singleton.ConfiguracionGlobal;
 import patrones.estructurales.adapter.clases.ZombieAdapter;
+import patrones.estructurales.bridge.clases.*;
+import patrones.estructurales.bridge.interfaces.Dibujo;
 
 import java.sql.SQLOutput;
 import java.util.HashMap;
@@ -41,6 +43,7 @@ public class PatronesDisenoApplication {
 		System.out.println();
 		System.out.println("---- ESTRUCTURALES ----");
 		adapter();
+		bridge();
 	}
 
 	private static void factorySimple() {
@@ -151,5 +154,22 @@ public class PatronesDisenoApplication {
 		ZombieAdapter zombie = new ZombieAdapter();
 		zombie.ataque();
 		zombie.dano();
+	}
+
+	private static void bridge(){
+		System.out.println();
+		System.out.println("---- BRIDGE ----");
+
+		// Creamos instancias de implementaciones concretas de Dibujo
+		Dibujo dibujoEnVentana = new DibujoEnVentana();
+		Dibujo dibujoEnArchivo = new DibujoEnArchivo();
+
+		// Creamos instancias de abstracciones refinadas utilizando las implementaciones concretas
+		Forma formaEnVentana = new Cuadrado(dibujoEnVentana, 20);
+		Forma formaEnArchivo = new Circulo(dibujoEnArchivo, 20);
+
+		// Llamamos a los métodos de dibujo de las formas
+		formaEnVentana.dibujar();
+		formaEnArchivo.dibujar();
 	}
 }
